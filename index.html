@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoftReview — Discover &amp; Review Top Software</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<!-- ─────────────────────────────────────────
+     HEADER
+───────────────────────────────────────── -->
+<header class="header" id="header">
+  <div class="hdr">
+
+    <a href="index.html" class="logo">
+      <div class="logo-box">SR</div>
+      <span class="logo-name">SoftReview</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#categories">Categories</a>
+      <a href="#top-rated">Top Rated</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#compare">Compare</a>
+      <a href="#blog">Blog</a>
+    </nav>
+
+    <a href="review.html" class="btn-submit">✍&nbsp; Submit Review</a>
+
+    <button class="burger" id="burger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#categories" class="mm-link" onclick="closeMenu()">Categories</a>
+    <a href="#top-rated"  class="mm-link" onclick="closeMenu()">Top Rated</a>
+    <a href="#reviews"    class="mm-link" onclick="closeMenu()">Reviews</a>
+    <a href="#compare"    class="mm-link" onclick="closeMenu()">Compare</a>
+    <a href="#blog"       class="mm-link" onclick="closeMenu()">Blog</a>
+    <a href="review.html" class="mm-cta">✍ Submit Review</a>
+  </div>
+</header>
+
+
+<!-- ─────────────────────────────────────────
+     HERO
+───────────────────────────────────────── -->
+<section class="hero">
+  <!-- Background texture -->
+  <div class="hero-dots"></div>
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+
+  <div class="container">
+    <div class="hero-pill">
+      <span class="pill-dot"></span>
+      Trusted by 50,000+ Professionals Worldwide
+    </div>
+
+    <h1 class="hero-title">
+      Discover the&nbsp;<em>Best</em><br>
+      <span class="hero-title-grad">Software</span>&nbsp;for Your Work
+    </h1>
+
+    <p class="hero-sub">
+      Read honest, community-driven reviews. Compare tools side-by-side.<br>
+      Make smarter software decisions — not based on ads.
+    </p>
+
+    <div class="hero-search-bar">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search software, tools, categories…">
+      <button onclick="handleSearch()">Search</button>
+    </div>
+
+    <div class="hero-trending">
+      <span class="tr-label">Trending:</span>
+      <a href="#" class="tr-tag">Figma</a>
+      <a href="#" class="tr-tag">Notion</a>
+      <a href="#" class="tr-tag">VS Code</a>
+      <a href="#" class="tr-tag">Slack</a>
+      <a href="#" class="tr-tag">Adobe XD</a>
+      <a href="#" class="tr-tag">Jira</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     STATS BAR
+───────────────────────────────────────── -->
+<div class="statsbar">
+  <div class="container statsbar-row">
+    <div class="stat">
+      <strong>12,400+</strong>
+      <span>Software Listed</span>
+    </div>
+    <div class="stat-line"></div>
+    <div class="stat">
+      <strong>98,000+</strong>
+      <span>Reviews Published</span>
+    </div>
+    <div class="stat-line"></div>
+    <div class="stat">
+      <strong>4.9 ★</strong>
+      <span>Average Rating</span>
+    </div>
+    <div class="stat-line"></div>
+    <div class="stat">
+      <strong>50,000+</strong>
+      <span>Monthly Readers</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ─────────────────────────────────────────
+     CATEGORIES  (8 cards)
+───────────────────────────────────────── -->
+<section class="section section-alt" id="categories">
+  <div class="container">
+
+    <div class="sec-header">
+      <div class="sec-tag">Browse by Category</div>
+      <h2>Explore <span class="hl">Top Categories</span></h2>
+      <p>Find the best software across every industry and use case</p>
+    </div>
+
+    <div class="cat-grid">
+
+      <a href="https://github.com/explore" target="_blank" class="cat-card">
+        <div class="cat-icon ci-dev">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Development</h4>
+          <p>IDEs, DevOps, APIs &amp; dev tools</p>
+          <span class="cat-num">2,400+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+      <a href="https://figma.com/community" target="_blank" class="cat-card">
+        <div class="cat-icon ci-design">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            <path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Design</h4>
+          <p>UI tools, prototyping &amp; assets</p>
+          <span class="cat-num">1,800+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+      <a href="https://slack.com/features" target="_blank" class="cat-card">
+        <div class="cat-icon ci-comm">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Communication</h4>
+          <p>Chat, video calls &amp; team tools</p>
+          <span class="cat-num">950+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+      <a href="https://malwarebytes.com" target="_blank" class="cat-card">
+        <div class="cat-icon ci-sec">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Security</h4>
+          <p>Antivirus, VPN &amp; protection</p>
+          <span class="cat-num">1,200+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+      <a href="#" class="cat-card">
+        <div class="cat-icon ci-analytics">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Analytics</h4>
+          <p>Data, BI &amp; reporting tools</p>
+          <span class="cat-num">860+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+      <a href="#" class="cat-card">
+        <div class="cat-icon ci-prod">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Productivity</h4>
+          <p>Planners, notes &amp; automation</p>
+          <span class="cat-num">1,500+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+      <a href="#" class="cat-card">
+        <div class="cat-icon ci-finance">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Finance</h4>
+          <p>Accounting, invoicing &amp; payroll</p>
+          <span class="cat-num">700+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+      <a href="#" class="cat-card">
+        <div class="cat-icon ci-mktg">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <div class="cat-info">
+          <h4>Marketing</h4>
+          <p>SEO, email, social &amp; ads</p>
+          <span class="cat-num">1,100+ tools</span>
+        </div>
+        <span class="cat-arr">→</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     TOP RATED SOFTWARE
+───────────────────────────────────────── -->
+<section class="section" id="top-rated">
+  <div class="container">
+
+    <div class="sec-header">
+      <div class="sec-tag">⭐ Editor's Choice</div>
+      <h2>Top Rated <span class="hl">Software</span></h2>
+      <p>Highest rated tools verified by our community of professionals</p>
+    </div>
+
+    <div class="sw-grid">
+
+      <!-- FIGMA -->
+      <div class="sw-card">
+        <div class="sw-top-row">
+          <span class="sw-badge badge-gold">🏆 #1 Ranked</span>
+          <a href="https://figma.com" target="_blank" class="sw-link">Visit Site ↗</a>
+        </div>
+        <div class="sw-logo figma-bg">
+          <svg viewBox="0 0 38 57" width="30" height="40" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#1ABCFE" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/>
+            <path fill="#0ACF83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 0 1-19 0z"/>
+            <path fill="#FF7262" d="M19 0v19h9.5a9.5 9.5 0 0 0 0-19H19z"/>
+            <path fill="#F24E1E" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/>
+            <path fill="#A259FF" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/>
+          </svg>
+        </div>
+        <h3>Figma</h3>
+        <span class="sw-category">Design Tool</span>
+        <p>Collaborative interface design tool trusted by product teams worldwide. Design, prototype and handoff — all in one place.</p>
+        <div class="sw-rating">
+          <span class="stars">★★★★★</span>
+          <strong>4.8</strong>
+          <span class="rating-of">/ 5.0</span>
+          <span class="rating-count">12,480 reviews</span>
+        </div>
+        <div class="sw-tags">
+          <span>UI Design</span><span>Prototyping</span><span>Free Plan</span>
+        </div>
+        <a href="review.html" class="sw-btn">Write a Review</a>
+      </div>
+
+      <!-- NOTION -->
+      <div class="sw-card sw-featured">
+        <div class="sw-popular-badge">⭐ Most Popular</div>
+        <div class="sw-top-row">
+          <span class="sw-badge badge-green">🥈 #2 Ranked</span>
+          <a href="https://notion.so" target="_blank" class="sw-link">Visit Site ↗</a>
+        </div>
+        <div class="sw-logo notion-bg">
+          <svg viewBox="0 0 100 100" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="100" rx="16" fill="#fff"/>
+            <path d="M18.5 20.3c3.1 2.5 4.3 2.3 10.1 1.9l54.9-3.3c1.2 0 .2-1.2-.2-1.4l-9.1-6.6c-1.7-1.2-4-2.7-8.4-2.3L14.1 12c-2 .2-2.4 1.2-1.6 2l6 6.3zM21.5 32v57.7c0 3.1 1.6 4.3 5.1 4.1l60.2-3.5c3.5-.2 3.9-2.3 3.9-4.9V28.2c0-2.6-1-3.9-3.3-3.7l-62.4 3.7c-2.5.2-3.5 1.4-3.5 3.8zm57 2.3c.4 1.8 0 3.5-1.8 3.7l-3.1.6v45.6c-2.7 1.4-5.2 2.2-7.3 2.2-3.3 0-4.1-1-6.6-4.1L40 50.5v38.2l7.3 1.6s0 3.5-4.9 3.5L29 94.5c-.4-1-.2-3.3 1.4-3.7l3.7-1V43.8L29 43.4c-.4-1.8.6-4.4 3.5-4.6l14.2-.8 20.3 31v-29.8l-6.1-.8c-.4-2.2 1.2-3.7 3.1-3.9l16.5-1z" fill="#000"/>
+          </svg>
+        </div>
+        <h3>Notion</h3>
+        <span class="sw-category">Productivity</span>
+        <p>All-in-one workspace for notes, docs, wikis &amp; project management. Replace 5 apps with just one Notion workspace.</p>
+        <div class="sw-rating">
+          <span class="stars">★★★★★</span>
+          <strong>4.7</strong>
+          <span class="rating-of">/ 5.0</span>
+          <span class="rating-count">9,820 reviews</span>
+        </div>
+        <div class="sw-tags">
+          <span>Notes</span><span>Databases</span><span>Free Plan</span>
+        </div>
+        <a href="review.html" class="sw-btn">Write a Review</a>
+      </div>
+
+      <!-- VS CODE -->
+      <div class="sw-card">
+        <div class="sw-top-row">
+          <span class="sw-badge badge-blue">🥉 #3 Ranked</span>
+          <a href="https://code.visualstudio.com" target="_blank" class="sw-link">Visit Site ↗</a>
+        </div>
+        <div class="sw-logo vscode-bg">
+          <svg viewBox="0 0 100 100" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <mask id="msk"><path fill="#fff" d="M70.9 3.8L38.6 33.9 15.8 17l-9.4 5.1L27.5 50 6.4 77.9l9.4 5.1 22.8-16.9 32.3 30.1 16.7-8V11.8L70.9 3.8zM80 72.8L52.8 50 80 27.2V72.8z"/></mask>
+            <linearGradient id="vsg" x1="6.4" y1="50" x2="93.6" y2="50" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#2489ca"/><stop offset="1" stop-color="#1070b3"/>
+            </linearGradient>
+            <path fill="url(#vsg)" mask="url(#msk)" d="M93.6 11.8L70.9 3.8 6.4 55.6v18.5L16.3 79l18.2-13.6L80 92.1l13.6-7.3V11.8z"/>
+            <path fill="#1070b3" mask="url(#msk)" d="M93.6 88.2L80 92.1 34.5 65.4 6.4 74.1v-18.5L80 7.9l13.6 3.9v76.4z"/>
+          </svg>
+        </div>
+        <h3>VS Code</h3>
+        <span class="sw-category">Development</span>
+        <p>Microsoft's free, open-source code editor with thousands of extensions. The #1 choice for modern developers globally.</p>
+        <div class="sw-rating">
+          <span class="stars">★★★★★</span>
+          <strong>4.9</strong>
+          <span class="rating-of">/ 5.0</span>
+          <span class="rating-count">21,340 reviews</span>
+        </div>
+        <div class="sw-tags">
+          <span>Code Editor</span><span>Extensions</span><span>100% Free</span>
+        </div>
+        <a href="review.html" class="sw-btn">Write a Review</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     COMMUNITY REVIEWS
+───────────────────────────────────────── -->
+<section class="section section-alt" id="reviews">
+  <div class="container">
+
+    <div class="sec-header">
+      <div class="sec-tag">Community Voices</div>
+      <h2>What Users <span class="hl">Are Saying</span></h2>
+      <p>Real reviews from real professionals — zero sponsored content, ever</p>
+    </div>
+
+    <div class="rev-grid">
+
+      <div class="rev-card">
+        <div class="rev-header">
+          <div class="rev-av av-orange">RK</div>
+          <div class="rev-info">
+            <strong>Rahul Kumar</strong>
+            <span>UI/UX Designer · Mumbai</span>
+          </div>
+          <span class="rev-sw-badge">Figma</span>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <h4>"Best design collaboration tool ever!"</h4>
+        <p>Figma changed how our entire design team works. Real-time editing, auto-layout, component libraries — everything is in one place. The free plan is generous enough to start.</p>
+        <div class="rev-foot">
+          <span class="rev-date">📅 March 2026</span>
+          <button class="rev-help-btn" onclick="this.innerHTML='👍 Helpful (1)'">👍 Helpful</button>
+        </div>
+      </div>
+
+      <div class="rev-card rev-card-main">
+        <div class="rev-header">
+          <div class="rev-av av-teal">SP</div>
+          <div class="rev-info">
+            <strong>Sneha Patel</strong>
+            <span>Product Manager · Bangalore</span>
+          </div>
+          <span class="rev-sw-badge rsb-notion">Notion</span>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <h4>"Replaced 5 apps — just use Notion!"</h4>
+        <p>I manage roadmaps, docs, meeting notes and our team wiki all inside Notion. Setup takes a week but it's completely worth it. The AI writing features are a bonus.</p>
+        <div class="rev-foot">
+          <span class="rev-date">📅 February 2026</span>
+          <button class="rev-help-btn" onclick="this.innerHTML='👍 Helpful (1)'">👍 Helpful</button>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-header">
+          <div class="rev-av av-blue">AJ</div>
+          <div class="rev-info">
+            <strong>Arjun Joshi</strong>
+            <span>Full Stack Developer · Pune</span>
+          </div>
+          <span class="rev-sw-badge rsb-vscode">VS Code</span>
+        </div>
+        <div class="rev-stars">★★★★★</div>
+        <h4>"Free, powerful, endlessly extensible!"</h4>
+        <p>Tried every editor — VS Code wins every time. IntelliSense, GitHub Copilot, Git integration and the built-in terminal make it a complete dev environment. And it's FREE.</p>
+        <div class="rev-foot">
+          <span class="rev-date">📅 March 2026</span>
+          <button class="rev-help-btn" onclick="this.innerHTML='👍 Helpful (1)'">👍 Helpful</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="rev-cta-bar">
+      <p>Tried a software recently? <strong>Help thousands make smarter decisions.</strong></p>
+      <a href="review.html" class="btn-orange">✍ Write Your Review →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     COMPARE
+───────────────────────────────────────── -->
+<section class="compare-sec" id="compare">
+  <div class="container">
+    <div class="compare-inner">
+
+      <div class="compare-text">
+        <div class="sec-tag sec-tag-dim">⚖️ Compare Tools</div>
+        <h2>Can't Decide?<br><span class="hl">Compare</span> Side by Side</h2>
+        <p>We partner with trusted platforms so you can compare software features, pricing and reviews — completely free, no account needed.</p>
+        <div class="compare-btns">
+          <a href="https://g2.com/compare" target="_blank" class="btn-orange">Compare on G2 →</a>
+          <a href="https://capterra.com/compare-software" target="_blank" class="btn-ghost">Try Capterra →</a>
+        </div>
+        <p class="compare-note">✓ 100% free &nbsp;·&nbsp; ✓ No signup required &nbsp;·&nbsp; ✓ Real user data</p>
+      </div>
+
+      <div class="compare-cards">
+        <div class="cmp-card">
+          <div class="cmp-logo cmp-figma">F</div>
+          <strong>Figma</strong>
+          <div class="cmp-stars">★★★★★</div>
+          <span class="cmp-score">4.8 / 5</span>
+          <span class="cmp-cat">Design</span>
+        </div>
+        <div class="cmp-vs">VS</div>
+        <div class="cmp-card">
+          <div class="cmp-logo cmp-notion">N</div>
+          <strong>Notion</strong>
+          <div class="cmp-stars">★★★★★</div>
+          <span class="cmp-score">4.7 / 5</span>
+          <span class="cmp-cat">Productivity</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     WRITE REVIEW CTA
+───────────────────────────────────────── -->
+<section class="write-cta">
+  <div class="container write-cta-inner">
+    <div class="wc-emoji">✍️</div>
+    <h2>Share Your Experience</h2>
+    <p>Your honest review helps thousands of professionals choose the right software. It takes less than 2 minutes.</p>
+    <a href="review.html" class="btn-orange btn-large">Write a Review Now →</a>
+  </div>
+</section>
+
+
+<!-- ─────────────────────────────────────────
+     FOOTER
+───────────────────────────────────────── -->
+<footer class="footer" id="blog">
+  <div class="container footer-top">
+
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="margin-bottom:16px">
+        <div class="logo-box">SR</div>
+        <span class="logo-name" style="color:#e8e0d8">SoftReview</span>
+      </a>
+      <p>The community's most trusted platform for honest software reviews, comparisons and discovery since 2024.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Browse</h5>
+      <a href="#categories">Categories</a>
+      <a href="#top-rated">Top Rated</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#compare">Compare</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="#">About Us</a>
+      <a href="#">Blog</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Submit</h5>
+      <a href="review.html">Write a Review</a>
+      <a href="admin.html">Admin Panel</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Advertise</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-row">
+      <span>© 2026 SoftReview — All Rights Reserved.</span>
+      <span>
+        Developed by&nbsp;<strong>MEET PATEL</strong>&nbsp;|&nbsp;
+        <a href="mailto:patelmeet0362006@gmail.com">patelmeet0362006@gmail.com</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  /* ── Sticky header ── */
+  const hdr = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  /* ── Burger menu ── */
+  const burger = document.getElementById('burger');
+  const mMenu  = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = mMenu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+  });
+  function closeMenu() {
+    mMenu.classList.remove('open');
+    burger.classList.remove('open');
+  }
+
+  /* ── Smooth scroll ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    });
+  });
+
+  /* ── Search ── */
+  function handleSearch() {
+    const q = document.getElementById('searchInput').value.trim();
+    if (q) window.open('https://www.google.com/search?q=' + encodeURIComponent(q + ' software review'), '_blank');
+  }
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleSearch();
+  });
+</script>
+
+</body>
+</html>

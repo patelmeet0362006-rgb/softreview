@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write a Review — SoftReview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="review.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="rv-header">
+    <div class="rv-header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="rv-logo">
+        <div class="rv-logo-box">SR</div>
+        <span class="rv-logo-text">SoftReview</span>
+      </a>
+
+      <!-- Nav -->
+      <nav class="rv-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="index.html#top-rated">Top Rated</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#compare">Compare</a>
+      </nav>
+
+      <!-- Button -->
+      <a href="index.html" class="rv-btn-home">← Back to Home</a>
+
+    </div>
+  </header>
+
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="rv-hero">
+    <div class="rv-container">
+      <div class="rv-breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Write a Review</span>
+      </div>
+      <div class="rv-hero-badge">✍️ Share Your Experience</div>
+      <h1>Write a <span class="rv-highlight">Review</span></h1>
+      <p>Help thousands of professionals choose the right software. Your honest opinion matters — takes only 2 minutes.</p>
+
+      <div class="rv-hero-stats">
+        <div class="rv-hs-item">
+          <strong>98,000+</strong>
+          <span>Reviews Published</span>
+        </div>
+        <div class="rv-hs-div"></div>
+        <div class="rv-hs-item">
+          <strong>50,000+</strong>
+          <span>Monthly Readers</span>
+        </div>
+        <div class="rv-hs-div"></div>
+        <div class="rv-hs-item">
+          <strong>4.9 ★</strong>
+          <span>Avg Rating</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <section class="rv-main">
+    <div class="rv-container">
+      <div class="rv-layout">
+
+        <!-- ========== LEFT: FORM ========== -->
+        <div class="rv-form-col">
+
+          <!-- Progress Bar -->
+          <div class="rv-progress">
+            <div class="rv-ps active" id="ps1">
+              <div class="rv-ps-dot">1</div>
+              <span>Software</span>
+            </div>
+            <div class="rv-ps-line" id="line1"></div>
+            <div class="rv-ps" id="ps2">
+              <div class="rv-ps-dot">2</div>
+              <span>Rating</span>
+            </div>
+            <div class="rv-ps-line" id="line2"></div>
+            <div class="rv-ps" id="ps3">
+              <div class="rv-ps-dot">3</div>
+              <span>Review</span>
+            </div>
+          </div>
+
+          <!-- Form Card -->
+          <div class="rv-form-card">
+
+            <!-- ── STEP 1: Software ── -->
+            <div class="rv-step active" id="step1">
+              <div class="rv-step-head">
+                <span class="rv-step-tag">Step 1 of 3</span>
+                <h2>Software Details</h2>
+                <p>Tell us which software you are reviewing</p>
+              </div>
+
+              <div class="rv-field">
+                <label>Software Name <span class="rv-req">*</span></label>
+                <div class="rv-select-wrap">
+                  <select id="softwareName">
+                    <option value="">— Select Software —</option>
+                    <option value="figma">Figma</option>
+                    <option value="notion">Notion</option>
+                    <option value="vscode">VS Code</option>
+                    <option value="slack">Slack</option>
+                    <option value="adobe-xd">Adobe XD</option>
+                    <option value="other">Other (specify below)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="rv-field" id="otherGroup" style="display:none;">
+                <label>Enter Software Name <span class="rv-req">*</span></label>
+                <input type="text" id="customSoftware" placeholder="e.g. Trello, Jira, Asana...">
+              </div>
+
+              <div class="rv-field">
+                <label>Category <span class="rv-req">*</span></label>
+                <div class="rv-select-wrap">
+                  <select id="category">
+                    <option value="">— Select Category —</option>
+                    <option>Development</option>
+                    <option>Design</option>
+                    <option>Communication</option>
+                    <option>Security</option>
+                    <option>Productivity</option>
+                    <option>Marketing</option>
+                    <option>Finance</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="rv-field">
+                <label>Usage Duration <span class="rv-req">*</span></label>
+                <div class="rv-select-wrap">
+                  <select id="duration">
+                    <option value="">— How long have you used it? —</option>
+                    <option>Less than 1 month</option>
+                    <option>1–6 months</option>
+                    <option>6–12 months</option>
+                    <option>1–2 years</option>
+                    <option>2+ years</option>
+                  </select>
+                </div>
+              </div>
+
+              <button class="rv-btn-primary" onclick="goToStep(2)">
+                Continue to Rating →
+              </button>
+            </div>
+
+
+            <!-- ── STEP 2: Rating ── -->
+            <div class="rv-step" id="step2">
+              <div class="rv-step-head">
+                <span class="rv-step-tag">Step 2 of 3</span>
+                <h2>Rate Your Experience</h2>
+                <p>Give an overall rating and rate specific aspects</p>
+              </div>
+
+              <div class="rv-field">
+                <label>Overall Rating <span class="rv-req">*</span></label>
+                <div class="rv-stars-big" id="starRating">
+                  <span class="rv-star" data-val="1">★</span>
+                  <span class="rv-star" data-val="2">★</span>
+                  <span class="rv-star" data-val="3">★</span>
+                  <span class="rv-star" data-val="4">★</span>
+                  <span class="rv-star" data-val="5">★</span>
+                </div>
+                <span class="rv-star-label" id="starLabel">Click a star to rate</span>
+              </div>
+
+              <div class="rv-breakdown">
+                <p class="rv-breakdown-title">Rate specific aspects</p>
+                <div class="rv-bk-item">
+                  <span>Ease of Use</span>
+                  <div class="rv-mini-stars" data-group="ease">
+                    <span class="rv-ms" data-val="1">★</span>
+                    <span class="rv-ms" data-val="2">★</span>
+                    <span class="rv-ms" data-val="3">★</span>
+                    <span class="rv-ms" data-val="4">★</span>
+                    <span class="rv-ms" data-val="5">★</span>
+                  </div>
+                </div>
+                <div class="rv-bk-item">
+                  <span>Value for Money</span>
+                  <div class="rv-mini-stars" data-group="value">
+                    <span class="rv-ms" data-val="1">★</span>
+                    <span class="rv-ms" data-val="2">★</span>
+                    <span class="rv-ms" data-val="3">★</span>
+                    <span class="rv-ms" data-val="4">★</span>
+                    <span class="rv-ms" data-val="5">★</span>
+                  </div>
+                </div>
+                <div class="rv-bk-item">
+                  <span>Customer Support</span>
+                  <div class="rv-mini-stars" data-group="support">
+                    <span class="rv-ms" data-val="1">★</span>
+                    <span class="rv-ms" data-val="2">★</span>
+                    <span class="rv-ms" data-val="3">★</span>
+                    <span class="rv-ms" data-val="4">★</span>
+                    <span class="rv-ms" data-val="5">★</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rv-step-btns">
+                <button class="rv-btn-back" onclick="goToStep(1)">← Back</button>
+                <button class="rv-btn-primary" onclick="goToStep(3)">Continue to Review →</button>
+              </div>
+            </div>
+
+
+            <!-- ── STEP 3: Write Review ── -->
+            <div class="rv-step" id="step3">
+              <div class="rv-step-head">
+                <span class="rv-step-tag">Step 3 of 3</span>
+                <h2>Write Your Review</h2>
+                <p>Share your honest experience with the community</p>
+              </div>
+
+              <div class="rv-field-row">
+                <div class="rv-field">
+                  <label>Your Name <span class="rv-req">*</span></label>
+                  <input type="text" id="reviewerName" placeholder="e.g. Meet Patel">
+                </div>
+                <div class="rv-field">
+                  <label>Job Title / Role</label>
+                  <input type="text" id="reviewerRole" placeholder="e.g. UI Designer">
+                </div>
+              </div>
+
+              <div class="rv-field">
+                <label>Email Address <span class="rv-req">*</span></label>
+                <input type="email" id="reviewerEmail" placeholder="your@email.com">
+                <span class="rv-hint">🔒 Never shown publicly</span>
+              </div>
+
+              <div class="rv-field">
+                <label>Review Title <span class="rv-req">*</span></label>
+                <input type="text" id="reviewTitle" placeholder="Summarize your experience in one line...">
+              </div>
+
+              <div class="rv-field">
+                <label>Your Detailed Review <span class="rv-req">*</span></label>
+                <textarea id="reviewBody" rows="6" placeholder="What do you love? What could be improved? Would you recommend it?"></textarea>
+                <span class="rv-charcount" id="charCount">0 / 100 minimum characters</span>
+              </div>
+
+              <div class="rv-pros-cons">
+                <div class="rv-field">
+                  <label>✅ Pros</label>
+                  <textarea id="pros" rows="3" placeholder="Best features you loved..."></textarea>
+                </div>
+                <div class="rv-field">
+                  <label>❌ Cons</label>
+                  <textarea id="cons" rows="3" placeholder="Things that need improvement..."></textarea>
+                </div>
+              </div>
+
+              <div class="rv-field">
+                <label class="rv-checkbox-label">
+                  <input type="checkbox" id="agreeTerms">
+                  <span>I confirm this is based on my genuine experience and agree to <a href="#">Terms of Use</a></span>
+                </label>
+              </div>
+
+              <div class="rv-step-btns">
+                <button class="rv-btn-back" onclick="goToStep(2)">← Back</button>
+                <button class="rv-btn-primary rv-btn-submit" onclick="submitReview()">
+                  Submit Review ✓
+                </button>
+              </div>
+            </div>
+
+
+            <!-- ── SUCCESS ── -->
+            <div class="rv-step" id="stepSuccess">
+              <div class="rv-success">
+                <div class="rv-success-icon">🎉</div>
+                <h2>Review Submitted!</h2>
+                <p>Thank you, <strong id="successName">friend</strong>! Your review will be published after a quick moderation check — usually within 24 hours.</p>
+                <a href="index.html" class="rv-btn-primary" style="text-decoration:none;display:inline-block;width:auto;padding:13px 36px;">← Back to Home</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- ========== RIGHT: SIDEBAR ========== -->
+        <aside class="rv-sidebar">
+
+          <div class="rv-sb-card rv-sb-guide">
+            <div class="rv-sb-icon">📋</div>
+            <h4>Review Guidelines</h4>
+            <ul>
+              <li>Be specific about features you used</li>
+              <li>Keep feedback honest and helpful</li>
+              <li>Minimum 100 characters required</li>
+              <li>No spam or promotional content</li>
+              <li>One review per software per user</li>
+            </ul>
+          </div>
+
+          <div class="rv-sb-card rv-sb-scale">
+            <div class="rv-sb-icon">⭐</div>
+            <h4>Rating Scale</h4>
+            <div class="rv-scale-list">
+              <div class="rv-sc-item"><span class="rv-sc-stars">★★★★★</span><span>Excellent</span></div>
+              <div class="rv-sc-item"><span class="rv-sc-stars">★★★★☆</span><span>Good</span></div>
+              <div class="rv-sc-item"><span class="rv-sc-stars">★★★☆☆</span><span>Average</span></div>
+              <div class="rv-sc-item"><span class="rv-sc-stars">★★☆☆☆</span><span>Poor</span></div>
+              <div class="rv-sc-item"><span class="rv-sc-stars">★☆☆☆☆</span><span>Terrible</span></div>
+            </div>
+          </div>
+
+          <div class="rv-sb-card rv-sb-trust">
+            <div class="rv-trust-icon">🔒</div>
+            <h4>Your Privacy is Safe</h4>
+            <p>Your email is never shown publicly. All reviews go through moderation before publishing.</p>
+          </div>
+
+          <div class="rv-sb-card rv-sb-recent">
+            <div class="rv-sb-icon">🕐</div>
+            <h4>Recent Reviews</h4>
+            <div class="rv-recent-list">
+              <div class="rv-ri">
+                <div class="rv-ri-av av1">RK</div>
+                <div class="rv-ri-info">
+                  <strong>Rahul K.</strong> reviewed <em>Figma</em>
+                  <span>★★★★★ · 2 days ago</span>
+                </div>
+              </div>
+              <div class="rv-ri">
+                <div class="rv-ri-av av2">SP</div>
+                <div class="rv-ri-info">
+                  <strong>Sneha P.</strong> reviewed <em>Notion</em>
+                  <span>★★★★★ · 5 days ago</span>
+                </div>
+              </div>
+              <div class="rv-ri">
+                <div class="rv-ri-av av3">AJ</div>
+                <div class="rv-ri-info">
+                  <strong>Arjun J.</strong> reviewed <em>VS Code</em>
+                  <span>★★★★★ · 1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="rv-footer">
+    <div class="rv-footer-inner">
+      <a href="index.html" class="rv-logo">
+        <div class="rv-logo-box">SR</div>
+        <span class="rv-logo-text">SoftReview</span>
+      </a>
+      <p class="rv-footer-copy">© 2026 SoftReview — All Rights Reserved.</p>
+      <p class="rv-footer-dev">
+        Developed by <strong>MEET PATEL</strong> &nbsp;|&nbsp;
+        <a href="mailto:patelmeet0362006@gmail.com">patelmeet0362006@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+
+ <!-- 
+  ================================================
+  REVIEW.HTML KE ANDAR SCRIPT TAG MEIN YEH 
+  submitReview() FUNCTION REPLACE KARO
+  ================================================
+-->
+<script>
+  const starLabels = ['','Terrible 😞','Poor 😕','Average 😐','Good 😊','Excellent 🤩'];
+  let selectedRating = 0;
+  let easeRating    = 0;
+  let valueRating   = 0;
+  let supportRating = 0;
+
+  // ── Step Navigation ──
+  function goToStep(n) {
+    document.querySelectorAll('.rv-step').forEach(s => s.classList.remove('active'));
+    const el = document.getElementById(n === 'Success' ? 'stepSuccess' : 'step' + n);
+    if (el) el.classList.add('active');
+    if (typeof n === 'number') {
+      document.querySelectorAll('.rv-ps').forEach((p, i) => {
+        p.classList.toggle('active', i + 1 <= n);
+        p.classList.toggle('done',   i + 1 < n);
+      });
+      document.querySelectorAll('.rv-ps-line').forEach((l, i) => {
+        l.classList.toggle('active', i + 1 < n);
+      });
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Main Stars ──
+  const bigStars = document.querySelectorAll('#starRating .rv-star');
+  bigStars.forEach(s => {
+    s.addEventListener('mouseenter', () => {
+      bigStars.forEach((x, i) => x.classList.toggle('hov', i < +s.dataset.val));
+    });
+    s.addEventListener('mouseleave', () => {
+      bigStars.forEach((x, i) => { x.classList.remove('hov'); x.classList.toggle('sel', i < selectedRating); });
+    });
+    s.addEventListener('click', () => {
+      selectedRating = +s.dataset.val;
+      bigStars.forEach((x, i) => x.classList.toggle('sel', i < selectedRating));
+      const lbl = document.getElementById('starLabel');
+      lbl.textContent = starLabels[selectedRating];
+      lbl.className = 'rv-star-label active';
+    });
+  });
+
+  // ── Mini Stars ──
+  document.querySelectorAll('.rv-mini-stars').forEach(group => {
+    const ms = group.querySelectorAll('.rv-ms');
+    let sel = 0;
+    const grp = group.dataset.group;
+    ms.forEach(m => {
+      m.addEventListener('mouseenter', () => ms.forEach((x, i) => x.classList.toggle('hov', i < +m.dataset.val)));
+      m.addEventListener('mouseleave', () => { ms.forEach(x => x.classList.remove('hov')); ms.forEach((x, i) => x.classList.toggle('sel', i < sel)); });
+      m.addEventListener('click', () => {
+        sel = +m.dataset.val;
+        ms.forEach((x, i) => x.classList.toggle('sel', i < sel));
+        if (grp === 'ease')    easeRating    = sel;
+        if (grp === 'value')   valueRating   = sel;
+        if (grp === 'support') supportRating = sel;
+      });
+    });
+  });
+
+  // ── Char Count ──
+  document.getElementById('reviewBody').addEventListener('input', function () {
+    const len = this.value.length;
+    const el  = document.getElementById('charCount');
+    el.textContent = `${len} / 100 minimum characters`;
+    el.style.color = len >= 100 ? '#E8E0D8' : '#6B665E';
+  });
+
+  // ── Other toggle ──
+  document.getElementById('softwareName').addEventListener('change', function () {
+    document.getElementById('otherGroup').style.display = this.value === 'other' ? 'block' : 'none';
+  });
+
+  // ── SUBMIT — Sends data to backend API ──
+  async function submitReview() {
+    const name     = document.getElementById('reviewerName').value.trim();
+    const email    = document.getElementById('reviewerEmail').value.trim();
+    const title    = document.getElementById('reviewTitle').value.trim();
+    const body     = document.getElementById('reviewBody').value.trim();
+    const agreed   = document.getElementById('agreeTerms').checked;
+    const software = document.getElementById('softwareName').value;
+    const custom   = document.getElementById('customSoftware')?.value.trim() || '';
+    const category = document.getElementById('category').value;
+    const duration = document.getElementById('duration').value;
+    const pros     = document.getElementById('pros').value.trim();
+    const cons     = document.getElementById('cons').value.trim();
+    const role     = document.getElementById('reviewerRole').value.trim();
+
+    // Frontend validation
+    if (!software)              { alert('⚠️ Please select a software.'); return; }
+    if (!category)              { alert('⚠️ Please select a category.'); return; }
+    if (!duration)              { alert('⚠️ Please select usage duration.'); return; }
+    if (!selectedRating)        { alert('⚠️ Please give an overall rating.'); return; }
+    if (!name || !email || !title || !body) { alert('⚠️ Please fill in all required fields.'); return; }
+    if (!agreed)                { alert('⚠️ Please agree to Terms of Use.'); return; }
+    if (body.length < 100)      { alert('⚠️ Please write at least 100 characters.'); return; }
+
+    // Show loading state
+    const btn = document.querySelector('.rv-btn-submit');
+    const originalText = btn.textContent;
+    btn.textContent = '⏳ Submitting...';
+    btn.disabled = true;
+
+    try {
+      // ── POST to backend ──
+      const API = 'http://localhost:3000/api';
+      const response = await fetch(API + '/reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          softwareName:   software,
+          customSoftware: custom,
+          category,
+          duration,
+          overallRating:  selectedRating,
+          easeRating,
+          valueRating,
+          supportRating,
+          reviewerName:   name,
+          reviewerEmail:  email,
+          reviewerRole:   role,
+          reviewTitle:    title,
+          reviewBody:     body,
+          pros,
+          cons
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // ── Success ──
+        document.getElementById('successName').textContent = name;
+        goToStep('Success');
+      } else {
+        alert('❌ ' + (data.message || 'Something went wrong.'));
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+
+    } catch (error) {
+      // If backend not running — show error
+      alert('❌ Cannot connect to server.\nMake sure the backend is running:\n\nnode server.js');
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
+  }
+</script>
+
+</body>
+</html>
